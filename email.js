@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Küldendő adatok:', data);
             
-            const response = await fetch('email-api-wheat.vercel.app/send-email-foglalj', {
+            const response = await fetch('https://email-api-wheat.vercel.app/send-email-foglalj', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
