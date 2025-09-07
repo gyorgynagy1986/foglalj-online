@@ -100,49 +100,7 @@
         }
       }, 3000);
 
-      // ==== Form validation (accessible messages) ====
-      const form = document.getElementById("contact-form");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const feedback = document.getElementById("form-feedback");
-        const name = form.querySelector("#name");
-        const email = form.querySelector("#email");
-        const gdpr = form.querySelector("#gdpr");
 
-        let valid = true;
-        [name, email].forEach((field) => {
-          if (!field.value.trim()) {
-            field.style.borderColor = "#e74c3c";
-            valid = false;
-          } else {
-            field.style.borderColor = "#27ae60";
-          }
-        });
-
-        // Basic email pattern
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email.value && !emailPattern.test(email.value)) {
-          email.style.borderColor = "#e74c3c";
-          valid = false;
-        }
-
-        if (!gdpr.checked) {
-          gdpr.focus();
-          valid = false;
-        }
-
-        if (valid) {
-          feedback.textContent =
-            "🎉 Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot!";
-          feedback.style.color = "#27ae60";
-          form.reset();
-          [name, email].forEach((f) => (f.style.borderColor = "#e9ecef"));
-        } else {
-          feedback.textContent =
-            "❌ Kérjük, ellenőrizze a kötelező mezőket és a jelölőnégyzetet.";
-          feedback.style.color = "#e74c3c";
-        }
-      });
 
       // ==== Prefetch internal anchors for faster nav (where supported) ====
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
