@@ -34,10 +34,22 @@
       content="Automatizálja a foglalásokat, legyen az étterem, kávézó, vagy bármilyen vendéglátóipari egység, növelje a bevételt és a vendégelégedettséget. 30 napos ingyenes próba."
     />
     <meta property="og:url" content="https://www.foglaljonline.hu/" />
-    <meta property="og:image" content="https://www.foglaljonline.hu/" />
+    <meta
+      property="og:image"
+      content="https://www.foglaljonline.hu/photos/og-image.jpg"
+    />
     <meta
       property="og:image:alt"
       content="Bukio foglaláskezelő felület előnézet"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.foglaljonline.hu/photos/og-image.jpg"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Asztalfoglalás foglaláskezelő felület előnézet"
     />
     <meta property="og:locale" content="hu_HU" />
     <meta property="og:site_name" content="Bukio" />
@@ -117,12 +129,9 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Bukio",
-        "url": "https://www.foglaljonline.hu",
-        "logo": https://www.foglaljonline.hu",
-        "sameAs": [
-          "https://www.facebook.com/stdbromo",
-
-        ],
+        "url": "https://www.foglaljonline.hu/",
+        "logo": "https://www.foglaljonline.hu/photos/logo.svg",
+        "sameAs": ["https://www.facebook.com/stdbromo/"],
         "contactPoint": [
           {
             "@type": "ContactPoint",
@@ -134,6 +143,7 @@
         ]
       }
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -157,23 +167,17 @@
         "name": "Bukio",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "url": "https://www.foglaljonline.hu",
+        "url": "https://www.foglaljonline.hu/",
         "description": "Magyar nyelvű éttermi foglalási rendszer: asztalkezelés, vendégprofilok, email automatizálás és üzleti analitika.",
         "offers": {
           "@type": "Offer",
           "priceCurrency": "HUF",
-          "price": "19990",
-          "category": "subscription",
+          "price": 19990.0,
           "url": "https://www.foglaljonline.hu/#pricing"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "243"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "foglalj online"
+          "name": "Bukio"
         }
       }
     </script>
@@ -264,21 +268,49 @@
           itemtype="https://schema.org/BreadcrumbList"
           aria-label="Morzsa navigáció"
         >
-          <a href="#home" itemprop="item"
-            ><span itemprop="name">Kezdőlap</span></a
+          <span
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
           >
+            <a itemprop="item" href="https://www.foglaljonline.hu/"
+              ><span itemprop="name">Kezdőlap</span></a
+            >
+            <meta itemprop="position" content="1" />
+          </span>
           <span aria-hidden="true">›</span>
-          <a href="#features" itemprop="item"
-            ><span itemprop="name">Funkciók</span></a
+          <span
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
           >
+            <a itemprop="item" href="https://www.foglaljonline.hu/#features"
+              ><span itemprop="name">Funkciók</span></a
+            >
+            <meta itemprop="position" content="2" />
+          </span>
           <span aria-hidden="true">›</span>
-          <a href="#pricing" itemprop="item"
-            ><span itemprop="name">Árak</span></a
+          <span
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
           >
+            <a itemprop="item" href="https://www.foglaljonline.hu/#pricing"
+              ><span itemprop="name">Árak</span></a
+            >
+            <meta itemprop="position" content="3" />
+          </span>
           <span aria-hidden="true">›</span>
-          <a href="#contact" itemprop="item"
-            ><span itemprop="name">Kapcsolat</span></a
+          <span
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
           >
+            <a itemprop="item" href="https://www.foglaljonline.hu/#contact"
+              ><span itemprop="name">Kapcsolat</span></a
+            >
+            <meta itemprop="position" content="4" />
+          </span>
         </nav>
       </div>
     </div>
@@ -514,42 +546,47 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <section
+      class="testimonials"
+      id="testimonials"
+      aria-labelledby="testimonials-title"
+    >
       <div class="section-container">
         <header class="section-header fade-in">
-          <h2>Mit mondanak ügyfeleink?</h2>
+          <h2 id="testimonials-title">Mit mondanak ügyfeleink?</h2>
           <p>Több mint 500 elégedett étterem használja már a rendszerünket.</p>
         </header>
-        <article
-          class="testimonial-card fade-in"
-          itemprop="review"
-          itemscope
-          itemtype="https://schema.org/Review"
-        >
-          <p class="testimonial-text" itemprop="reviewBody">
+
+        <!-- Egy testimonial kártya (mikroadat nélkül) -->
+        <article class="testimonial-card fade-in">
+          <p class="testimonial-text">
             A Bukio segítségével 40%-kal nőtt a foglalásaink száma. Az
             automatizált rendszer rengeteg időt spórol meg nekünk, és a
             vendégeink imádják az egyszerű online foglalást. Professzionális
             megoldás minden étterem számára!
           </p>
-          <div
-            class="testimonial-author"
-            itemprop="author"
-            itemscope
-            itemtype="https://schema.org/Person"
-          >
+
+          <div class="testimonial-author">
             <div class="author-avatar" aria-hidden="true">KP</div>
             <div class="author-info">
-              <h4 itemprop="name">Kovács Péter</h4>
-              <p>
-                <span itemprop="jobTitle"> Étterem tulajdonos</span>
+              <h4 class="author-name">Kovács Péter</h4>
+              <p class="author-meta">
+                <span class="author-title">Étterem tulajdonos</span>
               </p>
             </div>
           </div>
-          <meta itemprop="itemReviewed" content="Bukio" />
-          <meta itemprop="datePublished" content="2024-06-15" />
-          <meta itemprop="reviewRating" content="5" />
+
+          <!-- Ha szeretnél dátumot megjeleníteni, így add meg vizuálisan: -->
+          <time
+            class="testimonial-date"
+            datetime="2024-06-15"
+            aria-label="Közzétéve: 2024-06-15"
+          >
+            2024. június 15.
+          </time>
         </article>
+
+        <!-- Ha több véleményt is szeretnél, duplikáld az <article> blokkot és módosítsd a tartalmat -->
       </div>
     </section>
 
@@ -948,9 +985,7 @@
                 </div>
               </div>
 
-              <div style="display: flex; align-items: center">
-
-              </div>
+              <div style="display: flex; align-items: center"></div>
             </div>
           </div>
 
